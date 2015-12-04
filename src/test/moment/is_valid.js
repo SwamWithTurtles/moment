@@ -273,3 +273,8 @@ test('0 hour is invalid in strict', function (assert) {
     assert.equal(moment('0:01', 'h:mm', true).isValid(), false, '0 hour is invalid in strict');
     assert.equal(moment('0:01', 'h:mm').isValid(), true, '0 hour is valid in normal');
 });
+
+test('when am or pm is present', function(assert) {
+    assert.equal(moment('not a real date', 'h:mm A').isValid(), false, 'random string should not be viewed as date');
+    assert.equal(moment('12:30 AM', 'h:mm A').isValid(), true, 'sensible time is correctly formatted');
+});

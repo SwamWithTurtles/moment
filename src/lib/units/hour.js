@@ -110,7 +110,7 @@ export function localeIsPM (input) {
     return ((input + '').toLowerCase().charAt(0) === 'p');
 }
 
-export var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
+export var defaultLocaleMeridiemParse = /[ap]\.?m\.?/i;
 export function localeMeridiem (hours, minutes, isLower) {
     if (hours > 11) {
         return isLower ? 'pm' : 'PM';
